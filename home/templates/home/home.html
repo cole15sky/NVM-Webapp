@@ -1,19 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
- {% load static tailwind_tags %}
+{% extends 'home/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVM</title>
-    {% tailwind_css %}
+{% block content %}
+<div class="text-center mt-12">
+    <h1 class="text-4xl font-bold text-blue-600"> Narayani Vidhya Mandir Higher Secondary School</h1>
+    <p class="mt-4 text-lg text-gray-700">
+        Excellence in Education, Empowering Future Leaders.
+    </p>
+</div>
 
-</head>
-<body>
 
-    <h1 class="text-xl bg-blue-800">
-        NVM tailwind check!
-    </h1>
-    
-</body>
-</html>
+<!-- About Section -->
+<section class="mt-12 bg-white py-8 px-6 shadow-md rounded-lg container mx-auto">
+    <h2 class="text-2xl font-bold text-gray-800">About Us</h2>
+    <p class="mt-4 text-gray-600">
+        Established in the heart of Chitwan, Narayani Vidhya Mandir Higher Secondary School has been a beacon of quality education for decades. 
+        Our mission is to nurture young minds and empower them to achieve academic excellence, holistic growth, and ethical values.
+    </p>
+</section>
+
+<!-- Highlights Section -->
+<section class="mt-12 py-8 px-6 container mx-auto">
+    <h2 class="text-2xl font-bold text-gray-800">Why Choose Us?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-blue-800">Qualified Teachers</h3>
+            <p class="text-gray-700 mt-2">Our dedicated and experienced faculty ensure the best learning experience for our students.</p>
+        </div>
+        <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-blue-800">Modern Facilities</h3>
+            <p class="text-gray-700 mt-2">Well-equipped science labs, libraries, and digital classrooms for enhanced learning.</p>
+        </div>
+        <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-blue-800">Holistic Development</h3>
+            <p class="text-gray-700 mt-2">Fostering academic, cultural, and sports excellence for all-round development.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section class="mt-12 py-8 px-6 container mx-auto">
+    <h2 class="text-2xl font-bold text-gray-800">Get In Touch</h2>
+    <p class="mt-4 text-gray-700">
+        We would love to hear from you! For inquiries, admissions, or any other information, reach us at:
+    </p>
+    <div class="mt-4">
+        <p><strong>Address:</strong> Bharatpur, Chitwan, Nepal</p>
+        <p><strong>Email:</strong> info@narayanividyamandir.edu.np</p>
+        <p><strong>Phone:</strong> +977-xxxxxxxxxx</p>
+    </div>
+</section>
+{% endblock %}

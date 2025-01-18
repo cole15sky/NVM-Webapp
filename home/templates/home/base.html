@@ -1,33 +1,72 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-{% load static tailwind_tags %}
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Blog{% endblock %}</title>
+    <title>NVM-Dj</title>
     {% tailwind_css %}
 </head>
-<body class="flex flex-col min-h-screen bg-gray-100">
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 
     <!-- Navbar -->
-    <header class="bg-blue-600 text-white p-4">
-        <nav>
-            <ul class="flex justify-center space-x-8">
-                <li><a href="/" class="hover:underline">Blogs</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="bg-gray-800 text-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-xl font-bold">
+                <a href="{% url 'home' %}" class="text-white hover:text-blue-600">NVM</a>
+            </div>
 
-    <main class="flex-1 py-8 px-4">
+            <!-- Menu for larger screens -->
+            <div class="hidden lg:flex flex-grow items-center justify-center space-x-6">
+                <a href="{% url 'home' %}" class="text-white hover:text-blue-600">Home</a>
+                <a href="" class="text-white hover:text-blue-600">About</a>
+            </div>
+
+            <!-- Cart Icon on the Right -->
+            <div class="hidden lg:flex items-center">
+                <a href="" class="flex items-center space-x-2 text-white hover:text-blue-600">
+                    <i class="fa-solid fa-user-chef"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-gray-800 text-white">
+            <ul class="flex flex-col space-y-4 py-4 px-6">
+                <li><a href="{% url 'home' %}" class="hover:bg-gray-700 px-4 py-2 rounded-md transition block">Home</a></li>
+                <li><a href="" class="hover:bg-gray-700 px-4 py-2 rounded-md transition block">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto mt-6">
         {% block content %}
         {% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-blue-600 text-white p-4 text-center mt-auto">
-        <p>&copy; 2025 My Blog</p>
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p> &copy; 2025 NVM</p>
+            <p> All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
