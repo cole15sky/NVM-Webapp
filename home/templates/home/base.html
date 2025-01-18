@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static tailwind_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Blog{% endblock %}</title>
+    {% tailwind_css %}
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+    <!-- Navbar -->
+    <header class="bg-blue-600 text-white p-4">
+        <nav>
+            <ul class="flex justify-center space-x-8">
+                <li><a href="/" class="hover:underline">Blogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-1 py-8 px-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white p-4 text-center mt-auto">
+        <p>&copy; 2025 My Blog</p>
+    </footer>
+
+</body>
+</html>
