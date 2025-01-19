@@ -5,76 +5,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVM-Dj</title>
+    <title>NVMSS</title>
     {% tailwind_css %}
 </head>
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 
-    <!-- Navbar -->
-    <nav class="bg-gray-800 text-white shadow-md fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
-            <!-- Logo -->
-            <div class="text-xl font-bold flex items-center">
-                <a href="{% url 'home' %}" class="text-white hover:text-blue-600 flex items-center">
-                    <!-- Logo Image -->
-                    <img src="{% static 'app/images/nvm-logo.jpg' %}" alt="Logo" class="h-12 rounded-3xl mr-2">
-                    NVM
-                </a>
+<style>
+
+    .nav {
+        height: 100px;
+        background-color: 	grey;
+        width: 100vw;
+    }
+    .background {
+        background: linear-gradient(to bottom, #87CEEB, #ffffff);
+    }
+    .fix {
+        margin-top: 25px;
+    }
+
+  
+</style>
+
+
+<body class="background flex flex-col min-h-screen"> 
+    <main class="font-sans flex-grow"> 
+        <nav class="bg-gray-800 nav text-black shadow-md">
+            <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+
+                <!-- Logo -->
+
+                <div class="text-xl font-bold flex items-center">
+                    <a href="{% url 'home' %}" class="text-white hover:text-blue-600 flex items-center">
+                        <!-- Logo Image -->
+                        <img src="{% static 'app/images/nvm-logo.jpg' %}" alt="Logo" class="h-12 rounded-3xl mr-2">
+                        NVM
+                    </a>
+                </div>
+
+                <!-- Hamburger Menu (Mobile)
+                <button id="menu-toggle" class="text-white md:hidden mr-4 mt-5 focus:outline-none">
+                    <i class="fa-solid fa-bars fa-xl"></i>
+                </button> -->
+
+                <!-- Desktop Navigation Links -->
+                <ul id="menu" class="hidden md:flex mt-5 space-x-6 items-center justify-center flex-grow font-serif font-semibold text-md">
+                    <li>
+                        <a href="/" class="hover:bg-indigo-700  active text-white hover:text-white px-4 btn active py-2 rounded-md transition">Home</a>
+                    </li>
+                    <li>
+                        <a href="/aboutUs" class="hover:bg-indigo-700  text-white hover:text-white px-4 py-2 rounded-md transition">About Us</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:bg-indigo-700 text-white hover:text-white px-4 py-2 rounded-md transition">Academic</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:bg-indigo-700 text-white hover:text-white px-4 py-2 rounded-md transition">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:bg-indigo-700 text-white hover:text-white px-4 py-2 rounded-md transition">Contact Us</a>
+                    </li>
+                 
+                </ul>
             </div>
 
-            <!-- Menu for larger screens -->
-            <div class="hidden lg:flex flex-grow items-center justify-center space-x-6">
-                <a href="{% url 'home' %}" class="text-white hover:text-blue-600">Home</a>
-                <a href="{% url 'about' %}" class="text-white hover:text-blue-600">About Us</a>
-                <a href="" class="text-white hover:text-blue-600">Admission</a>
-                <a href="" class="text-white hover:text-blue-600">Academics</a>
-                <a href="" class="text-white hover:text-blue-600">Contact Us</a>
+            <!-- Mobile Dropdown -->
+            <div id="mobile-menu" class="hidden fixed inset-0 bg-indigo-800 text-white shadow-md md:hidden z-50">
+                <ul class="flex flex-col space-y-4 py-4 px-6 h-full items-center justify-center">
+                    <li>
+                        <a href="/" class="hover:bg-indigo-700 px-4 py-2 rounded-md transition block">Home</a>
+                    </li>
+                    <li>
+                        <a href="/aboutUs" class="hover:bg-indigo-700 px-4 py-2 rounded-md transition block">About Us</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:bg-indigo-700 px-4 py-2 rounded-md transition block">Academic</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:bg-indigo-700 px-4 py-2 rounded-md transition block">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:bg-indigo-700 px-4 py-2 rounded-md transition block">Contact Us</a>
+                    </li>
+                </ul>
             </div>
+            
+        </nav>
 
-            <!-- Cart Icon on the Right -->
-            <div class="hidden lg:flex items-center">
-                <a href="" class="flex items-center space-x-2 text-white hover:text-blue-600">
-                    <i class="fa-solid fa-user-chef"></i>
-                    <span>Login</span>
-                </a>
-            </div>
-
-            <!-- Hamburger Menu for Mobile -->
-            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
-                <i class="fa-solid fa-bars fa-xl"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden bg-gray-800 text-white">
-            <ul class="flex flex-col space-y-4 py-4 px-6">
-                <li><a href="{% url 'home' %}" class="hover:bg-gray-700 px-4 py-2 rounded-md transition block">Home</a></li>
-                <li><a href="{% url 'about' %}" class="hover:bg-gray-700 px-4 py-2 rounded-md transition block">About Us</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Adjust padding to avoid content being hidden by fixed navbar -->
-    <main class="flex-grow container mx-auto mt-20">
+        <!-- Content Section -->
         {% block content %}
+     
         {% endblock %}
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6 mt-auto"> <!-- Updated: Added mt-auto -->
+            <div class="container mx-auto md:text-xl text-sm text-center">
+                <p>&copy; 2025 Narayani Vidhya Mandir Secondary School</p>
+                <p>All Rights Reserved</p>
+            </div>
+        </footer>
+
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4 mt-8">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 Narayani Vidhya Mandir Higher Secondary School. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+<!-- 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        const menuToggle = document.getElementById("menu-toggle");
+        const desktopMenu = document.getElementById("menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            desktopMenu.classList.add("hidden");
         });
-    </script>
+    </script> -->
 
 </body>
+
+
 </html>
+
+
