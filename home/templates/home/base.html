@@ -5,6 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+
+
     <title>NVMSS</title>
     {% tailwind_css %}
 </head>
@@ -13,14 +18,14 @@
 
     .nav {
         height: 100px;
-        background-color: 	grey;
+        background-color:#FFFFF0;
         width: 100vw;
     }
     .background {
-        background: linear-gradient(to bottom, #87CEEB, #ffffff);
+        background:blanchedalmond
     }
     .fix {
-        margin-top: 25px;
+        margin-top: 20px;
     }
 
   
@@ -33,36 +38,35 @@
             <div class="container mx-auto px-4 py-4 flex items-center justify-between">
 
                 <!-- Logo -->
-
-                <div class="text-xl font-bold flex items-center">
-                    <a href="{% url 'home' %}" class="text-white hover:text-blue-600 flex items-center">
+                    <div class="text-xl font-bold flex mt-3 items-center">
+                    <a href="{% url 'home' %}" class="text-black hover:text-blue-600 flex items-center">
                         <!-- Logo Image -->
                         <img src="{% static 'app/images/nvm-logo.jpg' %}" alt="Logo" class="h-12 rounded-3xl mr-2">
                         NVM
                     </a>
                 </div>
 
-                <!-- Hamburger Menu (Mobile)
+                <!-- Hamburger Menu (Mobile) -->
                 <button id="menu-toggle" class="text-white md:hidden mr-4 mt-5 focus:outline-none">
-                    <i class="fa-solid fa-bars fa-xl"></i>
-                </button> -->
+                    <i class="fa-solid fa-bars fa-xl" style="color: #0f0f0f;"></i>
+                </button>
 
                 <!-- Desktop Navigation Links -->
                 <ul id="menu" class="hidden md:flex mt-5 space-x-6 items-center justify-center flex-grow font-serif font-semibold text-md">
                     <li>
-                        <a href="/" class="hover:bg-indigo-700  active text-white hover:text-white px-4 btn active py-2 rounded-md transition">Home</a>
+                        <a href="/" class="hover:bg-indigo-700  active text-black hover:text-white px-4 btn active py-2 rounded-md transition">Home</a>
                     </li>
                     <li>
-                        <a href="/aboutUs" class="hover:bg-indigo-700  text-white hover:text-white px-4 py-2 rounded-md transition">About Us</a>
+                        <a href="/aboutUs" class="hover:bg-indigo-700  text-black hover:text-white px-4 py-2 rounded-md transition">About Us</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 text-white hover:text-white px-4 py-2 rounded-md transition">Academic</a>
+                        <a href="" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Academic</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 text-white hover:text-white px-4 py-2 rounded-md transition">Admissions</a>
+                        <a href="" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Admissions</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 text-white hover:text-white px-4 py-2 rounded-md transition">Contact Us</a>
+                        <a href="" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Contact Us</a>
                     </li>
                  
                 </ul>
