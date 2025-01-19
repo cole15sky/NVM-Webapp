@@ -11,7 +11,7 @@
 <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 
     <!-- Navbar -->
-    <nav class="bg-gray-800 text-white shadow-md">
+    <nav class="bg-gray-800 text-white shadow-md fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
             <!-- Logo -->
             <div class="text-xl font-bold flex items-center">
@@ -25,7 +25,7 @@
             <!-- Menu for larger screens -->
             <div class="hidden lg:flex flex-grow items-center justify-center space-x-6">
                 <a href="{% url 'home' %}" class="text-white hover:text-blue-600">Home</a>
-                <a href="" class="text-white hover:text-blue-600">About Us</a>
+                <a href="{% url 'about' %}" class="text-white hover:text-blue-600">About Us</a>
                 <a href="" class="text-white hover:text-blue-600">Admission</a>
                 <a href="" class="text-white hover:text-blue-600">Academics</a>
                 <a href="" class="text-white hover:text-blue-600">Contact Us</a>
@@ -49,12 +49,13 @@
         <div id="mobile-menu" class="hidden bg-gray-800 text-white">
             <ul class="flex flex-col space-y-4 py-4 px-6">
                 <li><a href="{% url 'home' %}" class="hover:bg-gray-700 px-4 py-2 rounded-md transition block">Home</a></li>
-                <li><a href="" class="hover:bg-gray-700 px-4 py-2 rounded-md transition block">About</a></li>
+                <li><a href="{% url 'about' %}" class="hover:bg-gray-700 px-4 py-2 rounded-md transition block">About Us</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="flex-grow container mx-auto mt-6">
+    <!-- Adjust padding to avoid content being hidden by fixed navbar -->
+    <main class="flex-grow container mx-auto mt-20">
         {% block content %}
         {% endblock %}
     </main>
@@ -63,7 +64,6 @@
     <footer class="bg-gray-800 text-white py-4 mt-8">
         <div class="container mx-auto text-center">
             <p>&copy; 2025 Narayani Vidhya Mandir Higher Secondary School. All Rights Reserved.</p>
-
         </div>
     </footer>
 
