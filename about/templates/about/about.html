@@ -47,6 +47,42 @@
         </p>
     </div>
 
+    <div class="swiper-container mt-10" style="padding: 2rem; background-color: #ecf0f1; border-radius: 8px;">
+        <h2 style="font-size: 2rem; color: #2c3e50; text-align: center;">Messages from Educators and Faculty</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide text-center">
+                    <img src="{% static 'app/images/karnakumardawadi.jpg' %}" alt="Teacher 1" class="mx-auto rounded-full w-32 h-32 object-cover">
+                    <p class="mt-4 font-semibold text-xl">"Empowering young minds is the ultimate goal of education."</p>
+                    <p class="mt-2 text-gray-600 text-bold text-xl">- Karna Kumar Dawadi 
+                        <p> Chairman </p>
+                    <a href="https://www.facebook.com/karna.kumardawadi.3" target="_blank" class="text-blue-600 hover:underline">Facebook Profile</a>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide text-center">
+                    <img src="{% static 'app/images/chabisharma.jpg' %}" alt="Teacher 2" class="mx-auto rounded-full w-32 h-32 object-cover">
+                    <p class="mt-4 font-semibold text-xl">"Education is the foundation for a brighter tomorrow."</p>
+                    <p class="mt-2 text-gray-600">- Chhabi Sharma</p>
+                    <p>Managing Director </p>
+                    <a href="https://www.facebook.com/chhabi.sharma.547" target="_blank" class="text-blue-600 hover:underline">Facebook Profile</a>
+                </div>
+                <div class="swiper-slide text-center">
+                    <img src="{% static 'app/images/sanchita.jpg' %}" alt="Teacher 2" class="mx-auto rounded-full w-32 h-32 object-cover">
+                    <p class="mt-4 font-semibold text-xl">"Education is the foundation for a brighter tomorrow."</p>
+                    <p class="mt-2 text-gray-600">- Sanchhita Adhikari</p>
+                    <p> Teacher </p>
+                    <a href="https://www.facebook.com/chhabi.sharma.547" target="_blank" class="text-blue-600 hover:underline">Facebook Profile</a>
+                </div>
+            </div>
+            <br> <br> <br>
+            <!-- Pagination and Navigation -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
     <div class="contact-section" style="margin-top: 2rem; padding: 1rem; background-color: #dfe6e9; border-radius: 8px;">
         <h2 style="font-size: 2rem; color: #2c3e50; margin-bottom: 1rem;">Get in Touch</h2>
         <p style="font-size: 1rem; color: #34495e;">
@@ -60,6 +96,8 @@
     </div>
 </div>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
     const closeButtons = document.querySelectorAll('.close-btn');
 
@@ -76,5 +114,28 @@
       }
     });
   });
+
+
+
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
 </script>
 {% endblock %}
+
+
+

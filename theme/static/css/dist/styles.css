@@ -916,6 +916,10 @@ select {
   margin-top: 0.75rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -964,6 +968,10 @@ select {
   height: 10rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -978,6 +986,10 @@ select {
 
 .w-24 {
   width: 6rem;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .max-w-2xl {
@@ -1644,6 +1656,10 @@ select {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .hover\:shadow-2xl:hover {
