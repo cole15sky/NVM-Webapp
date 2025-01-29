@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Academic - Narayani Vidya Mandir{% endblock %}
+
+{% block content %}
+<section class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4">Academic Programs</h1>
+    <p class="text-xl mb-6">Our school offers a comprehensive academic program designed to foster intellectual growth and creativity. We are dedicated to providing students with a strong educational foundation, preparing them for success in the future.</p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Elementary Education</h2>
+            <p class="mb-4">Our elementary education focuses on nurturing young minds with a strong foundation in reading, writing, math, science, and social studies.</p>
+        </div>
+        
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Secondary Education</h2>
+            <p class="mb-4">At the secondary level, we offer advanced courses in science, mathematics, languages, and humanities, designed to prepare students for higher education and professional careers.</p>
+        </div>
+    </div>
+
+    <div class="mt-8">
+        <h2 class="text-2xl font-semibold mb-4">Special Programs</h2>
+        <ul class="list-disc pl-5 space-y-2">
+            <li>STEM (Science, Technology, Engineering, and Mathematics)</li>
+            <li>Sports and Extracurricular Activities</li>
+            <li>Arts and Music Programs</li>
+            <li>Foreign Language Courses</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

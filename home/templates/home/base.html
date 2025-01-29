@@ -8,29 +8,23 @@
     <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 
-
-
     <title>NVMSS</title>
     {% tailwind_css %}
 </head>
 
 <style>
-
     .nav {
         height: 100px;
         background-color:#FFFFF0;
         width: 100vw;
     }
     .background {
-        background:blanchedalmond
+        background:
     }
     .fix {
         margin-top: 20px;
     }
-
-  
 </style>
-
 
 <body class="background flex flex-col min-h-screen"> 
     <main class="font-sans flex-grow"> 
@@ -54,43 +48,42 @@
                 <!-- Desktop Navigation Links -->
                 <ul id="menu" class="hidden md:flex mt-5 space-x-6 items-center justify-center flex-grow text-lg md:text-xl">
                     <li>
-                        <a href="/" class="hover:bg-indigo-700  active text-black hover:text-white px-4 btn active py-2 rounded-md transition">
+                        <a href="{% url 'home' %}" class="hover:bg-indigo-700 active text-black hover:text-white px-4 btn active py-2 rounded-md transition">
                             Home</a>
                     </li>
                     <li>
-                        <a href="/aboutUs" class="hover:bg-indigo-700  text-black hover:text-white px-4 py-2 rounded-md transition">
+                        <a href="{% url 'about' %}" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">
                             About Us</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Academic</a>
+                        <a href="{% url 'academic' %}" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Academic</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Admissions</a>
+                        <a href="{% url 'admissions' %}" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Admissions</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Contact Us</a>
+                        <a href="{% url 'contactus' %}" class="hover:bg-indigo-700 text-black hover:text-white px-4 py-2 rounded-md transition">Contact Us</a>
                     </li>
-                 
                 </ul>
             </div>
 
             <!-- Mobile Dropdown -->
-            <div id="mobile-menu" class="hidden fixed inset-0 bg-white text-black hover:text-bg-indigo-700   shadow-md md:hidden z-50">
+            <div id="mobile-menu" class="hidden fixed inset-0 bg-white text-black hover:text-bg-indigo-700 shadow-md md:hidden z-50">
                 <ul class="flex flex-col space-y-4 py-4 px-6 h-full items-center justify-center">
                     <li>
-                        <a href="/" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">Home</a>
+                        <a href="{% url 'home' %}" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">Home</a>
                     </li>
                     <li>
-                        <a href="/aboutUs" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">About Us</a>
+                        <a href="{% url 'about' %}" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">About Us</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 hover:text-white  px-4 py-2 rounded-md transition block">Academic</a>
+                        <a href="{% url 'academic' %}" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">Academic</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">Admissions</a>
+                        <a href="{% url 'admissions' %}" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">Admissions</a>
                     </li>
                     <li>
-                        <a href="" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">Contact Us</a>
+                        <a href="{% url 'contactus' %}" class="hover:bg-indigo-700 hover:text-white px-4 py-2 rounded-md transition block">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -124,7 +117,4 @@
 
 </body>
 
-
 </html>
-
-

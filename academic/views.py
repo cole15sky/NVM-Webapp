@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def academic(request):
+    return render(request,'academic/academic.html')

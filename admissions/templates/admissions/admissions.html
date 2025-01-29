@@ -1,0 +1,53 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Admissions - Narayani Vidya Mandir{% endblock %}
+
+{% block content %}
+<section class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4">Admissions</h1>
+    <p class="text-xl mb-6">We are excited to welcome new students to our school! The admissions process is designed to be transparent and straightforward to help guide you through every step. Below is all the information you need to apply for the upcoming academic year.</p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        <!-- Admission Requirements Section -->
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Admission Requirements</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Completed Application Form</li>
+                <li>Recent Academic Transcripts</li>
+                <li>Recommendation Letter from Previous School</li>
+                <li>Proof of Residence</li>
+                <li>Photocopy of Birth Certificate</li>
+            </ul>
+        </div>
+        
+        <!-- Application Process Section -->
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Application Process</h2>
+            <p class="mb-4">The application process is simple and includes the following steps:</p>
+            <ol class="list-decimal pl-5 space-y-2">
+                <li>Fill out the online application form.</li>
+                <li>Submit required documents.</li>
+                <li>Attend the entrance examination (if applicable).</li>
+                <li>Attend the interview (if applicable).</li>
+                <li>Complete the registration process upon acceptance.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="mt-8">
+        <h2 class="text-2xl font-semibold mb-4">Important Dates</h2>
+        <ul class="list-disc pl-5 space-y-2">
+            <li>Application Deadline: [Date]</li>
+            <li>Entrance Exam Date: [Date]</li>
+            <li>Results Announcement: [Date]</li>
+        </ul>
+    </div>
+
+    <div class="mt-8">
+        <h2 class="text-2xl font-semibold mb-4">Contact Admissions Office</h2>
+        <p>If you have any questions, please don't hesitate to reach out to our Admissions Office:</p>
+        <p class="mt-2"><strong>Email:</strong> admissions@schoolname.com</p>
+        <p class="mt-2"><strong>Phone:</strong> +123 456 7890</p>
+    </div>
+</section>
+{% endblock %}

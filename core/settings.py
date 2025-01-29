@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'about',
     'fontawesomefree', 
-    'academics',
+    'academic',
     'admissions',
     'contactus',
 ]
