@@ -1,0 +1,31 @@
+service: nvmss
+image: techiesky/nvmss
+
+env:
+  secret:
+    - SECRET_KEY
+
+proxy:
+  ssl: true
+  host: nvmss.edu.np
+  app_port: 8000 
+  healthcheck:
+    path: /
+    interval: 5
+    timeout: 10
+
+servers:
+  web:
+    hosts:
+      - 49.13.150.218    
+    options:
+      expose: "8000"
+
+registry:
+  username: techiesky
+  password: 
+    - KAMAL_REGISTRY_PASSWORD
+
+
+builder:
+  arch: amd64
