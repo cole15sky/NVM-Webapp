@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'about',
     'fontawesomefree', 
+    'academics',
+    'admissions',
+    'contactus',
 ]
 
 MIDDLEWARE = [
