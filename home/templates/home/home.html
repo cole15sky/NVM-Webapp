@@ -2,21 +2,40 @@
 {% load static %}
 
 {% block content %}
+<!-- Include AOS CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<!-- Heading Section -->
+<div class="relative mt-10 px-4">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-black uppercase font-serif text-center" 
+        data-aos="fade-up">
+        Welcome to Narayani Vidhya Mandir Secondary School
+    </h1>
+</div>
+
+<!-- Quote Section (Initially Hidden) -->
+<div class="quote-container opacity-0 mt-1 text-xl md:text-2xl  text-center text-gray-800  bg-opacity-10 p-4 rounded-lg shadow-lg" id="quote">
+    "Quality education is our commitment."
+</div>
+
 <!-- Hero Section -->
-<div class="relative h-screen w-full">
-    <img src="{% static 'app/images/nvm_scouts.jpg' %}" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="absolute top-16 left-0 w-full text-center z-10">
-        <h1 class=" text-5xl md:text-3xl font-bold tracking-wide text-white uppercase font-serif">Welcome to Narayani Vidhya Mandir Secondary School</h1>
+<div class="relative min-h-[80vh] w-full overflow-hidden flex flex-col items-center justify-center mt-6">
+    
+    <!-- Image Section (Initially Hidden) -->
+    <div class="relative w-full max-w-6xl h-full flex justify-center items-center opacity-0 transition-opacity duration-1000 ease-in-out" id="hero-image">
+        <img src="{% static 'app/images/nvm_scouts.jpg' %}" 
+             alt="Hero Background" 
+             class="w-full h-auto max-h-[80vh] object-cover rounded-lg shadow-lg">
     </div>
+
 </div>
 
 <!-- About Section -->
-<section id="about" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6">
+<section id="about" class="py-16 bg-gray-100 px-4">
+    <div class="container mx-auto max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-4xl font-bold text-gray-800 mb-6">About Our School</h2>
+            <div data-aos="fade-right">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About Our School</h2>
                 <p class="text-gray-600 leading-relaxed mb-4">
                     Established in Chitwan, Narayani Vidhya Mandir has been dedicated to providing world-class education for decades. We focus on academic excellence, holistic development, and character building to shape future leaders.
                 </p>
@@ -26,94 +45,48 @@
                     <li>Extracurricular activities for all-round development</li>
                 </ul>
             </div>
-            <div>
-                <img src="{% static 'app/images/building-nvm.jpg' %}" alt="School Building" class="rounded-lg shadow-lg">
+            <div class="flex justify-center" data-aos="fade-left">
+                <img src="{% static 'app/images/building-nvm.jpg' %}" alt="School Building" class="rounded-lg shadow-lg w-full max-w-md md:max-w-lg">
             </div>
         </div>
     </div>
 </section>
 
-<!-- Facilities Section -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Facilities</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-gray-100 p-6 rounded-lg shadow">
-                <img src="{% static 'app/images/library.jpg' %}" alt="Library" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Library</h3>
-                <p class="text-gray-600">A well-stocked library with resources to support academic and personal growth.</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-lg shadow">
-                <img src="{% static 'app/images/science_lab.jpg' %}" alt="Science Lab" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Science Labs</h3>
-                <p class="text-gray-600">State-of-the-art labs for hands-on learning and experiments.</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-lg shadow">
-                <img src="{% static 'app/images/sports_facilities.jpg' %}" alt="Sports Facilities" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Sports Facilities</h3>
-                <p class="text-gray-600">Extensive sports facilities to encourage physical fitness and teamwork.</p>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- Include AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000, // Animation duration
+        once: true, // Animations only happen once
+    });
 
-<!-- Scouts and Activities Section -->
-<section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Activities</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="{% static 'app/images/nvm_scouts.jpg' %}" alt="NVM Scouts" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">NVM Scouts</h3>
-                <p class="text-gray-600">Developing leadership and teamwork through scout activities and outdoor learning.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="{% static 'app/images/assembly.jpg' %}" alt="Assembly" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Daily Assembly</h3>
-                <p class="text-gray-600">Fostering a sense of community and discipline during daily assemblies.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="{% static 'app/images/iso.jpg' %}" alt="ISO Certification" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">ISO Certification</h3>
-                <p class="text-gray-600">Ensuring quality standards with ISO-certified processes and facilities.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    // Delay the image display by 1.5 seconds
+    setTimeout(() => {
+        document.getElementById('hero-image').classList.remove('opacity-0');
+    }, 1500);
 
-<!-- Contact Section -->
-<section class="py-16 bg-blue-600 text-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h3 class="text-2xl font-semibold mb-4">Get in Touch</h3>
-                <p class="mb-4">We’re here to answer your questions and provide more information about our school.</p>
-                <ul class="space-y-3">
-                    <li><strong>Address:</strong> Shivaghat, Bharatpur, Nepal</li>
-                    <li><strong>Email:</strong> narayanividyamandir16@gmail.com</li>
-                    <li><strong>Phone:</strong> 985-5046000</li>
-                </ul>
-            </div>
-            <div>
-                <form class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="mb-4">
-                        <label for="name" class="block text-gray-800 mb-2">Name</label>
-                        <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none">
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-800 mb-2">Email</label>
-                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none">
-                    </div>
-                    <div class="mb-4">
-                        <label for="message" class="block text-gray-800 mb-2">Message</label>
-                        <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none"></textarea>
-                    </div>
-                    <button class="bg-blue-600 px-6 py-2 text-white font-semibold rounded-lg hover:bg-blue-700 transition">Send</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+    // Delay the quote section by 1 second and make it slide in from the right
+    setTimeout(() => {
+        const quote = document.getElementById('quote');
+        quote.classList.remove('opacity-0');
+        quote.classList.add('transition-all', 'duration-1000', 'opacity-100', 'transform', 'translate-x-0');
+    }, 1000);
+</script>
+
+<!-- Add custom CSS for sliding animation -->
+<style>
+    /* Slide-in animation from the right */
+    .quote-container {
+        transform: translateX(100%); /* Start from the right */
+    }
+
+    .quote-container.transition-all {
+        transition: transform 1s ease-out;
+    }
+
+    .quote-container.translate-x-0 {
+        transform: translateX(0); /* Slide into view */
+    }
+</style>
 
 {% endblock %}

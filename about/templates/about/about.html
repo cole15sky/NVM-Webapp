@@ -2,140 +2,94 @@
 {% load static %}
 
 {% block content %}
+
+<style>
+    .swiper-container{
+        background-color: white;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+</style>
 <!-- Hero Section -->
 <div class="relative h-screen w-full">
     <img src="{% static 'app/images/assembly.jpg' %}" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="absolute top-16 left-0 w-full text-center z-10">
-        <h1 class="text-5xl md:text-3xl font-bold tracking-wide text-white uppercase font-serif"></h1>
+    <div class="absolute top-16 left-0 w-full text-center z-10 px-4 md:px-12">
+        <h1 class="text-xl md:text-4xl font-bold tracking-wide text-white uppercase font-serif">Empowering Education</h1>
     </div>
 </div>
 
-<div class="about-page-container" style="padding: 2rem; font-family: Arial, sans-serif; line-height: 1.6;">
-    <div class="hero-section" style="background-color: #f5f5f5; padding: 2rem; text-align: center; border-radius: 8px;">
-        <h1 style="font-size: 2.5rem; color: #2c3e50;">About Us</h1>
-        <p style="font-size: 1.2rem; color: #7f8c8d;">
-             NVM Empowering education through technology and innovation.
-        </p>
-    </div>
+<div class="about-page-container px-4 md:px-12 py-6 md:py-12 font-sans">
+    <!-- About Us Section -->
+    <div class="hero-section swiper-container p-6 text-center rounded-lg">
+        <h1 class="text-3xl md:text-4xl text-gray-800 font-semibold">About Us</h1>
+        <p class="text-lg text-gray-600 mt-4">NVM Empowering education through technology and innovation.</p>
+    </div>  
+    <br>
 
-    <div class="mission-section" style="margin-top: 2rem; padding: 1rem;">
-        <h2 style="font-size: 2rem; color: #2c3e50; margin-bottom: 1rem;">Our Mission</h2>
-        <p style="font-size: 1rem; color: #34495e;">
-            Our mission is to provide students, parents, and educators with a seamless platform that fosters academic excellence 
-            and holistic development. We strive to create a collaborative environment where learning thrives and every individual 
-            can reach their fullest potential.
-        </p>
-    </div>
-
-    <div class="features-section" style="margin-top: 2rem; padding: 1rem; background-color: #ecf0f1; border-radius: 8px;">
-        <h2 style="font-size: 2rem; color: #2c3e50; margin-bottom: 1rem;">Key Features</h2>
-        <ul style="list-style-type: disc; margin-left: 2rem; color: #34495e; font-size: 1rem;">
-            <li>Comprehensive student performance tracking.</li>
-            <li>Real-time communication between teachers and parents.</li>
-            <li>Efficient management of administrative tasks.</li>
-            <li>Interactive learning modules and resources.</li>
-            <li>Secure and accessible platform for all users.</li>
-        </ul>
-    </div>
-
-    <div class="team-section" style="margin-top: 2rem; padding: 1rem;">
-        <h2 style="font-size: 2rem; color: #2c3e50; margin-bottom: 1rem;">Our Team</h2>
-        <p style="font-size: 1rem; color: #34495e;">
-            Behind NVM is a dedicated team of educators, developers, and visionaries committed to revolutionizing the education system. 
-            With years of experience and a passion for innovation, we bring the best tools and resources to our users.
-        </p>
-    </div>
-
-    <div class="swiper-container mt-10" style="padding: 2rem; background-color: #ecf0f1; border-radius: 8px;">
-        <h2 style="font-size: 2rem; color: #2c3e50; text-align: center;">Messages from Educators and Faculty</h2>
+    <!-- Educator Messages Section (Swiper Slider) -->
+    <div class="swiper-container mt-10 px-4 md:px-12 py-4 bg-gray-200 rounded-lg">
+        <h2 class="text-2xl md:text-3xl text-gray-800 font-semibold text-center mb-6">"Insights from Our Educators"</h2>
         <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper border-2 ">
                 <!-- Slide 1 -->
                 <div class="swiper-slide text-center">
-                    <img src="{% static 'app/images/karnakumardawadi.jpg' %}" alt="Teacher 1" class="mx-auto rounded-full w-32 h-32 object-cover">
+                    <img src="{% static 'app/images/karna2.JPG' %}" alt="Teacher 1" class="mx-auto rounded-full w-32 h-32 object-cover">
                     <p class="mt-4 font-semibold text-xl">"Empowering young minds is the ultimate goal of education."</p>
-                    <p class="mt-2 text-gray-600 text-bold text-xl">- Karna Kumar Dawadi 
-                        <p> Chairman </p>
+                    <p class="mt-2 text-gray-600 text-bold text-xl">- Karna Kumar Dawadi</p>
+                    <p>Chairman</p>
                     <a href="https://www.facebook.com/karna.kumardawadi.3" target="_blank" class="text-blue-600 hover:underline">Facebook Profile</a>
                 </div>
                 <!-- Slide 2 -->
                 <div class="swiper-slide text-center">
-                    <img src="{% static 'app/images/chabisharma.jpg' %}" alt="Teacher 2" class="mx-auto rounded-full w-32 h-32 object-cover">
-                    <p class="mt-4 font-semibold text-xl">"Education is the foundation for a brighter tomorrow."</p>
-                    <p class="mt-2 text-gray-600">- Chhabi Sharma</p>
-                    <p>Managing Director </p>
-                    <a href="https://www.facebook.com/chhabi.sharma.547" target="_blank" class="text-blue-600 hover:underline">Facebook Profile</a>
-                </div>
-                <div class="swiper-slide text-center">
-                    <img src="{% static 'app/images/sanchita.jpg' %}" alt="Teacher 2" class="mx-auto rounded-full w-32 h-32 object-cover">
+                    <img src="{% static 'app/images/shreenavas.jpg' %}" alt="Teacher 2" class="mx-auto rounded-full w-32 h-32 object-cover">
                     <p class="mt-4 font-semibold text-xl">"Education is the foundation for a brighter tomorrow."</p>
                     <p class="mt-2 text-gray-600">- Sanchhita Adhikari</p>
-                    <p> Teacher </p>
+                    <p>Principal</p>
+                    <a href="https://www.facebook.com/chhabi.sharma.547" target="_blank" class="text-blue-600 hover:underline">Facebook Profile</a>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide text-center">
+                    <img src="{% static 'app/images/chabisharma.jpg' %}" alt="Teacher 3" class="mx-auto rounded-full w-32 h-32 object-cover">
+                    <p class="mt-4 font-semibold text-xl">"Education is the foundation for a brighter tomorrow."</p>
+                    <p class="mt-2 text-gray-600">- Chhabi Sharma</p>
+                    <p>Managing Director</p>
                     <a href="https://www.facebook.com/chhabi.sharma.547" target="_blank" class="text-blue-600 hover:underline">Facebook Profile</a>
                 </div>
             </div>
-            <br> <br> <br>
+            <br>
+            <br>
+
+
             <!-- Pagination and Navigation -->
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
     </div>
-
-    <div class="contact-section" style="margin-top: 2rem; padding: 1rem; background-color: #dfe6e9; border-radius: 8px;">
-        <h2 style="font-size: 2rem; color: #2c3e50; margin-bottom: 1rem;">Get in Touch</h2>
-        <p style="font-size: 1rem; color: #34495e;">
-            Have any questions or suggestions? We'd love to hear from you! Feel free to contact us at:
-        </p>
-        <ul style="list-style-type: none; margin-top: 1rem; padding: 0; color: #34495e; font-size: 1rem;">
-            <li><strong>Email:</strong> narayanividyamandir16@gmail.com</li>
-            <li><strong>Phone:</strong> +977-985-5046000</li>
-            <li><strong>Address:</strong> Shivaghat, Bharatpur, Nepal</li>
-        </ul>
-    </div>
 </div>
 
+<!-- Swiper JS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-    const closeButtons = document.querySelectorAll('.close-btn');
-
-  closeButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-      const alert = event.target.closest('.alert');
-      if (alert) {
-        alert.style.transition = 'opacity 0.5s';
-        alert.style.opacity = '0';
-
-        setTimeout(() => {
-          alert.remove();
-        }, 500);
-      }
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
     });
-  });
-
-
-
-  const swiper = new Swiper('.mySwiper', {
-    loop: true,
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-});
 </script>
+
 {% endblock %}
-
-
-
